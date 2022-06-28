@@ -3,12 +3,13 @@ const port=8000;//step1
 const app= express();  //step1
 
 
-// router step 2
-app.get('/',(req,res)=>{
-    res.send("<h1>Hello  from Codeial</h1>");
+
+// step 3
+app.use('/',require('./routes'))
+
+app.use('*',(req,res)=>{
+    res.send('Page Not Found')
 })
-
-
 
 // listening on port
 app.listen(port,(err)=>{//step1
