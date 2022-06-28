@@ -1,6 +1,16 @@
 const express= require('express');//step1
 const port=8000;//step1
 const app= express();  //step1
+const ejs = require('ejs');
+const path = require('path');
+
+
+
+
+// adding ejs to my views step 5
+app.set('view engine','ejs');
+app.set('views',path.join(__dirname,'views'));
+
 
 
 

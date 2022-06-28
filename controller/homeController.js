@@ -1,3 +1,7 @@
+
+
 module.exports.home = (req,res)=>{
-    res.send("Codeial")
+    return res.render('home',{                  //step 5 sending ejs
+        title : "Codeial"
+    })
 }
