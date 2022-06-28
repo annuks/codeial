@@ -3,6 +3,10 @@ const port=8000;//step1
 const app= express();  //step1
 
 
+// router step 2
+app.get('/',(req,res)=>{
+    res.send("<h1>Hello  from Codeial</h1>");
+})
 
 
 
