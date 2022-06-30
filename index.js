@@ -5,6 +5,17 @@ const app= express();  //step1
 const ejs = require('ejs');
 const path = require('path');
 const PORT = process.env.PORT || 8000;
+const expressLayouts = require ('express-ejs-layouts');
+
+
+//using static files like css, images
+app.use(express.static('./assets'));
+
+//using partials and layouts
+app.use(expressLayouts);
+// extract styles and scripts from sub pages in to layouts
+app.set('layout extractStyles',true );
+app.set('layout extractScripts',true );
 
 // adding ejs to my views step 5
 app.set('view engine','ejs');

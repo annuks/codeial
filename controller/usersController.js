@@ -1,4 +1,6 @@
 module.exports.profile=(req,res)=>{
-    res.end('<h1> Users Profile Page</h1>');
+return res.render('user_Profile',{ title : "User Profile"
+})
 
-}
+
+};
