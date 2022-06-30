@@ -7,6 +7,8 @@ const path = require('path');
 const PORT = process.env.PORT || 8000;
 const expressLayouts = require ('express-ejs-layouts');
 
+//importing database from mongoose
+const db= require('./config/mongoose');
 
 //using static files like css, images
 app.use(express.static('./assets'));
