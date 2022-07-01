@@ -9,7 +9,12 @@ const path = require('path');
 const PORT = process.env.PORT || 8000;
 const expressLayouts = require ('express-ejs-layouts');
 //importing database from mongoose
-const db= require('./config/mongoose');
+const db = require('./config/mongoose');
+
+//used for session cookie
+const session = require('express-session');
+const passport = require('passport');
+const passportLocal = require ('./config/passport-local-strategy');
 
 
 app.use(express.urlencoded());
@@ -28,11 +33,29 @@ app.set('layout extractScripts',true );
 app.set('view engine','ejs');
 app.set('views',path.join(__dirname,'views'));
 
-// step 3
+//
+    app.use(session({
+        name:'codeial',
+
+        //to do change the secret before deployment in production mode
+        secret:'blahsomething',
+        saveUninitialized:false,
+        resave:false,
+        cookie:{
+            maxAge:(1000*60*100)
+        }
+        
+    })); 
+    app.use(passport.initialize());
+    app.use(passport.session());
+
+// step 3    use express router
 app.use('/',require('./routes'))
 app.use('*',(req,res)=>{
     res.send('Page Not Found')
 })
+
+
 
 // listening on port
 app.listen(PORT,(err)=>{//step1
