@@ -1,14 +1,19 @@
 require('dotenv').config()
 const express= require('express');//step1
+
 // const port=8000;//step1
+const cookieParser = require('cookie-parser')
 const app= express();  //step1
 const ejs = require('ejs');
 const path = require('path');
 const PORT = process.env.PORT || 8000;
 const expressLayouts = require ('express-ejs-layouts');
-
 //importing database from mongoose
 const db= require('./config/mongoose');
+
+
+app.use(express.urlencoded());
+app.use(cookieParser());
 
 //using static files like css, images
 app.use(express.static('./assets'));
