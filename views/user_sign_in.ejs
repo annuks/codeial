@@ -1,7 +1,12 @@
-<h1> User Sign In Page</h1>
-<form action="/users/create-session" method="post">
-    <input type="email" name="email" placeholder="Enter User Name/Email" required >
-    <input type="password" name="password" placeholder="Enter Your Password" required><br>
-    <input type="submit" value="Sign In">
+<div id="parent-div">
 
+<form action="/users/create-session" method="post">
+    <p> <label> Log in to Codeial</label></p>
+    <p> <label> Email/Phone</label></p>
+    <p><input type="email" id="userid_field" name="email" placeholder="Enter User Name/Email" required ></p>
+<p><label> Password</label></p>
+<p> <input type="password" id="password_field" name="password" placeholder="Enter Your Password" required></p>
+<p> <input type="submit" id="btn" value="Sign In"></p>
+    <label> Forget Password?</label>
     </form>
+</div>

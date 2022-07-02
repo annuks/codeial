@@ -1,0 +1,16 @@
+header {
+  position: fixed;
+  margin: 0;
+  background: #1e6fb5;
+  top: 0;
+  width: 100%; }
+  header ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row-reverse; }
+    header ul li {
+      margin: 0 10px; }
+      header ul li a {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: #f31010;
+        text-decoration: none; }

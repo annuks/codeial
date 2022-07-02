@@ -1,5 +1,5 @@
-body{
-    background-color: lightblue;
-    margin: 0px;
-    text-align: center;
-}
+body {
+  background-color: azure;
+  margin: 0; }
+  body #layout-main {
+    margin-top: 65px; }

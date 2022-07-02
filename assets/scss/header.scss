@@ -1,0 +1,20 @@
+header{
+    position: fixed;
+    margin: 0;
+    background: rgb(30, 111, 181);
+    top: 0;
+    width: 100%;
+    ul{
+        list-style-type: none;
+        display: flex;
+        flex-direction: row-reverse;
+        li{
+            margin: 0 10px;
+            a{
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                color: rgb(243, 16, 16);
+                text-decoration: none;
+            }
+        }
+    }
+}

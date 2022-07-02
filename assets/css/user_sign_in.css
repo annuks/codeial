@@ -1,0 +1,13 @@
+#parent-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: white;
+  height: 350px;
+  width: 300px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: olive;
+  margin-left: 75%; }
+  #parent-div p {
+    height: 30px;
+    width: 200px; }

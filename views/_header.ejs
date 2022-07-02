@@ -1,17 +1,18 @@
-<Header> 
-    Page Header
+<header> 
+    <!-- Page header -->
 
     <ul>
         <% if (locals.user){ %>
+            <li>  <a href="/users/sign-out">Sign Out</a>
+
+            </li>
         <li>
             <a href="/users/Profile">
                 <%= user.name %>
 
             </a> 
         </li>
-        <li>  <a href="/users/sign-out">Sign Out</a>
-
-        </li>
+       
 
         <%} else{ %>
             <li>
@@ -24,4 +25,4 @@
             <% } %>
     </ul>
     
-</Header>
+</header>

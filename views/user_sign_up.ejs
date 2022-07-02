@@ -1,9 +1,16 @@
-<h1> Sign Up </h1>
+<div id="parent-divs">
 <form action="/users/create" method="post">
-<input type="text" name="name" placeholder="Your Name" required ><br>
-<input type="email" name="email" placeholder="Your Email" required><br>
-<input type="password" name="password" placeholder="Enter Password" required>
-<input type="password"  name="confirm_password" placeholder="Confirm Password" required><br>
-<input type="submit" value="Sign Up">
+    <p> Sign Up </p>
+    <p><label>Create a New Account</label></p>
+    <p><label> Enter Your Full Name</label></p>
+    <p><input type="text" name="name" placeholder="Your Name" required ></p>
+    <p><label>Enter Your Email:</label></p>
+    <p><input type="email" id="email" name="email" placeholder="Your Email" required></p>
+    <p><label>Enter Desired Password</label></p>
+    <p><input type="password" name="password" placeholder="Enter Password" required></p>
+    <p><label>Confirm  Password</label></p>
+    <p><input type="password"  name="confirm_password" placeholder="Confirm Password" required></p>
+<input type="submit" id="btn" value="Sign Up">
 
 </form>
+</div>
