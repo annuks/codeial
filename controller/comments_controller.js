@@ -4,6 +4,7 @@ const { post } = require('../routes/posts');
 
 module.exports.create = (req,res)=>{
     Post.findById(req.body.post,(err,post)=>{
+        req.flash('success','Comment Published !');
         if(post){
             Comment.create( {
                 content:req.body.content,
@@ -12,8 +13,8 @@ module.exports.create = (req,res)=>{
             }, function(err,comment){
 
             if(err){
-                console.log("Error in Commenting",err);
-                return;
+                req.flash('error','You can not comment');
+                return res.redirect('back');
             }
             post.comments.push(comment);
             post.save();
@@ -32,6 +33,7 @@ module.exports.create = (req,res)=>{
                 let postID=comment.post;
                 comment.remove();
                 Post.findByIdAndUpdate(postID,{ $pull:{comments:req.params.id}},(err,post)=>{
+                    req.flash('success','Comment Deleteded !');
                     return res.redirect('back');
                 
                 })

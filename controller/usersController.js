@@ -3,27 +3,23 @@ const User = require("../models/user");
 
 //rendering user profile page
 module.exports.profile = (req, res) => {
-  User.findById(req.params.id, function(err,user){
+  User.findById(req.params.id, function (err, user) {
     return res.render("user_Profile", {
       title: "Profile",
-      profile_user:user
+      profile_user: user,
     });
-
   });
-  
-}
+};
 
-module.exports.update = function(req,res){
-  if(req.user.id == req.params.id){
-    User.findByIdAndUpdate(req.params.id, req.body, function (err,user) {
+module.exports.update = function (req, res) {
+  if (req.user.id == req.params.id) {
+    User.findByIdAndUpdate(req.params.id, req.body, function (err, user) {
       return res.redirect("back");
-    
-  });
-
-  }else{
-          return res.status(401).send('UnAuthorised Access');
+    });
+  } else {
+    return res.status(401).send("UnAuthorised Access");
   }
-}
+};
 
 //rendering signup page
 module.exports.signUp = function (req, res) {
@@ -71,12 +67,13 @@ module.exports.create = function (req, res) {
 };
 
 module.exports.createSession = function (req, res) {
-  return res.redirect('/');
+  req.flash("success", "Logged in Successfully");
+  return res.redirect("/");
 };
 
 module.exports.destroySessions = function (req, res) {
-  req.logout((err)=>{
-    console.log("Logged Out")
+  req.logout((err) => {
+    req.flash("success", "You have been Logged Out");
+    return res.redirect("/");
   });
-  return res.redirect('/');
 };
