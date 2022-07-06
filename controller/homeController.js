@@ -1,26 +1,29 @@
 
 const Post = require('../models/post');
-module.exports.home = (req,res)=>{
+const User = require('../models/user');
+module.exports.home = async (req,res)=>{
     // console.log('Cookies: ', req.cookies)
-    Post.find({})
+   try{
+    let posts = await Post.find({})
     .populate('user')
     .populate({
         path:'comments',
         populate:{
             path:'user'
-
         }
-     }   )
-    .exec(function(err,posts){ 
+    });
+            let users = await User.find({});
+            return res.render('home',{
+                title:'Codeial | Home',
+                posts:posts,
+                all_users:users,
 
-        if(err){
-            console.log('Error in Showing Author',err)
-            return
-        }
-        return res.render('home',{
-            title:'Codeial | Home',
-            posts:posts,
         });
-});
-    }
+     }
+
+   catch (err){
+    console.log("Error",err);
+    return;
+   }
+   }
     
