@@ -16,11 +16,12 @@ module.exports.profile = (req, res) => {
 module.exports.update = async function (req, res) {
       if (req.user.id == req.params.id) {
         try{
-
           let user = await User.findById(req.params.id);
           User.uploadedAvatar(req,res, function(err){
               if(err){
                 console.log('  ##### Multer Error ######',err)
+              }
+              
                 user.name=req.body.name;
                 user.email=req.body.email;
 
@@ -36,8 +37,8 @@ module.exports.update = async function (req, res) {
                 }
                 user.save();
                 return  res.redirect('back');
-            
-              }
+              
+              
           });
 
         } catch (err){
@@ -49,9 +50,7 @@ module.exports.update = async function (req, res) {
       }
       else{
             req.flash('error','Uauthorised')
-            return res.status(401).send("UnAuthorised Access");
-          
-
+            return res.status(401).send("UnAuthorised Access");  
       }
  };
 

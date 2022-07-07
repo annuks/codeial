@@ -25,7 +25,7 @@ const multer = require ('multer');
 app.use(saasMiddleware({
   src:'./assets/scss',
   dest:'./assets/css',
-  debug:true,
+  debug:false,
   outputStyle:'extended',
   prefix:'/css'
 }))

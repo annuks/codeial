@@ -1,0 +1,21 @@
+#home-container {
+  display: flex; }
+
+#feed-posts {
+  width: 85%;
+  padding: 10px; }
+
+#user-friends {
+  background-color: whitesmoke;
+  display: inline-block;
+  width: 15%;
+  height: 100%;
+  padding: 10px;
+  border-left: 1px solid lightgray; }
+  #user-friends p a {
+    text-decoration: none; }
+
+#posts-list-containner {
+  display: flex;
+  align-content: flex-start;
+  background-color: whitesmoke; }

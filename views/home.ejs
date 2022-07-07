@@ -1,8 +1,8 @@
 
    
-    <h1> Home Codeial Page</h1>
+<link rel="stylesheet" href="/css/home.css">
+<div id="home-container">
     <section id="feed-posts">
-        <h4>Posts</h4>
             <% if(locals.user){%>
             <form action="/posts/create" id="new-post-form" method="POST">
            <p> <textarea name="content" id="post" cols="30" rows="3" placeholder="Whats in Your Mind.." required="true"></textarea></p>
@@ -16,8 +16,8 @@
                          <%-include('_post') -%>
 
                          <% }%>
-                        </ul>
-                    </div>
+                </ul>
+            </div>
                    
            </section>
            <section  id="user-friends">
@@ -30,3 +30,4 @@
 
            </section>
            <script src="/js/home_posts.js"></script>
+</div>    
