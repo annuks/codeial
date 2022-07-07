@@ -13,6 +13,7 @@ const db = require("./config/mongoose");
 const session = require("express-session");
 const passport = require("passport");
 const passportLocal = require("./config/passport-local-strategy");
+const passportJWT =require ("./config/passport-jwt-strategy");
 
 const MongoStore = require('connect-mongo');
 
@@ -87,7 +88,7 @@ app.use(customMware.setFlash);
 // step 3    use express router
 app.use("/", require("./routes"));
 app.use("*", (req, res) => {
-  res.send("Page Not Found");
+  res.send("Planet Not Found");
 });
 
 // listening on port
@@ -97,5 +98,5 @@ app.listen(PORT, (err) => {
     console.log("Error in running server", err);
     return;
   }
-  console.log("Server is Listening on Port:--", PORT);
+  console.log("Server is Listening on Port <=> ", PORT);
 });
