@@ -20,6 +20,7 @@ const MongoStore = require('connect-mongo');
 const saasMiddleware = require ('node-sass-middleware');
 const flash = require('connect-flash');
 const customMware = require('./config/middleware');
+const multer = require ('multer');
 
 app.use(saasMiddleware({
   src:'./assets/scss',
@@ -30,6 +31,8 @@ app.use(saasMiddleware({
 }))
 app.use(express.urlencoded());
 app.use(cookieParser());
+//to available upload path to browser
+app.use('/uploads',express.static(__dirname + '/uploads'));
 
 
 
